@@ -1,0 +1,24 @@
+{% if template contains 'collection' %}{{build_tag}} T-Shirts | Chummy Tees{% endif %}
+
+
+ {% assign tags = '' %}
+  {% assign build_tag = '' %}
+  {% if current_tags %}
+  {% for tag in current_tags %}
+    {% assign single_tag = tag | split:' ' %}
+    {% for t in single_tag %}
+  		{% if forloop.first %}
+  			{% if build_tag == '' %}
+  			{% assign build_tag = t | capitalize %}
+  			{% else %}
+  			{% assign build_tag = build_tag | append:',' %}
+  			{% assign build_tag = t | capitalize | prepend: ' ' |prepend: build_tag %}
+  			{% endif %}
+  		{% else %}
+    		{% assign build_tag = t | capitalize | prepend: ' ' |prepend: build_tag %}
+  		{% endif %}
+    {% endfor 
+  <title>%}
+  {% endfor 
+  <!-- {{build_tag}}-->%}
+  {% endif %}<title>
